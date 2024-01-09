@@ -95,3 +95,43 @@ function addPositive(a, b) {
 console.log(addPositive(2, 3));
 console.log(addPositive(3, -5));
 console.log(addPositive(-1, -8));
+
+//typeof operator
+let myvar = "Doro";
+
+console.log(typeof myvar);
+
+myvar = 5;
+
+console.log(typeof myvar);
+
+//04)
+const userName = "Jenna";
+
+console.log(userName);
+
+function getUserNameLength() {
+  return userName.length;
+}
+
+console.log(getUserNameLength(userName) > 4);
+
+let isString = function (data) {
+  result = typeof data;
+  return result === "string";
+};
+
+console.log(isString("Hello"));
+// result should be true
+
+console.log(isString(3));
+// result should be false
+
+console.log(isString(undefined));
+// result should be false
+
+console.log(isString(""));
+// result should be true
+
+console.log(isString("John" + "Doe"));
+// result should be true
