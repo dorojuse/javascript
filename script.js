@@ -33,6 +33,7 @@ console.log((2 + 5) * 7);
 console.log("My " + "name " + "is " + "Doro ");
 
 //Coding-Task:
+// 02)
 console.log("D" + "o" + "r" + "o" + "t" + "h" + "e" + "a");
 
 console.log("Hallo");
@@ -48,3 +49,49 @@ console.log((600 + 510) / 2);
 console.log(2 + 2);
 
 console.log(25 / 5 === 5 && 50 / 10 === 5);
+
+function test() {
+  console.log("Funktioniert die Funktion?");
+}
+
+test();
+
+function myfunction() {
+  return "Hallo";
+}
+
+console.log(myfunction());
+
+//03)
+
+function welcomeMsg(a) {
+  return "Welcome " + a + "!";
+}
+
+console.log(welcomeMsg("Jane"));
+console.log(welcomeMsg("Marc"));
+console.log(welcomeMsg("Lorenz"));
+console.log(welcomeMsg("Maria"));
+console.log(welcomeMsg("Christoph"));
+console.log(welcomeMsg("Aaron"));
+
+function calcGrossPrice(a, b) {
+  return a + a * b;
+}
+
+console.log(calcGrossPrice(20, 0.19));
+console.log(calcGrossPrice(40, 0.16));
+
+function addPositive(a, b) {
+  if (a < 0) {
+    a = a * -1;
+  }
+  if (b < 0) {
+    b = b * -1;
+  }
+  return a + b;
+}
+
+console.log(addPositive(2, 3));
+console.log(addPositive(3, -5));
+console.log(addPositive(-1, -8));
