@@ -245,7 +245,27 @@ console.log(charCount("Resümee", "e"));
 // result should be: 3
 
 console.log(charCount("Resümee", "eh"));
-// result should be: 3
 
 console.log(charCount("Resümee", "k"));
-// result should be: 3
+
+//07)
+
+function removeItem(array, a) {
+  const copy = array.slice();
+  copy.splice(a - 1, 1);
+  return copy;
+}
+
+const ainmals = ["Dog", "Cat", "Lion"];
+console.log(removeItem(ainmals, 1));
+// result should be: ["Cat", "Lion"]
+
+console.log(ainmals);
+// result should be still: ["Dog", "Cat", "Lion"]
+
+const fruits = ["Watermelon", "Banana", "Cherry", "Kiwi", "Pineapple", "Apple"];
+console.log(removeItem(fruits, 3));
+// result should be: ["Watermelon", "Banana", "Kiwi", "Pineapple", "Apple"]
+
+console.log(fruits);
+// result should be still: ["Watermelon", "Banana", "Cherry", "Kiwi", "Pineapple", "Apple"]
