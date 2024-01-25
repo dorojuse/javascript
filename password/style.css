@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  font-family: monospace;
+  font-size: 2rem;
+  padding: 0.2rem;
+}
+input {
+  font-size: 2rem;
+  padding: 0.2rem;
+  font-family: monospace;
+  margin: 1rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
