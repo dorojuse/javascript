@@ -1,0 +1,44 @@
+.body--morning {
+  background-color: #fff2f2;
+}
+
+.button--morning {
+  all: unset;
+  font-family: monospace;
+  font-size: 30px;
+  background-color: #fff2f2;
+  color: black;
+  border: 5px solid black;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  border-radius: 3px;
+}
+
+.body--night {
+  background-color: #323232;
+}
+
+.button--night {
+  all: unset;
+  font-family: monospace;
+  font-size: 30px;
+  background-color: #323232;
+  color: #fff2f2;
+  border: 5px solid #fff2f2;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  border-radius: 3px;
+  box-shadow: 0 0 20px yellow;
+}
