@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: monospace;
+}
+
+header {
+  background-color: #ffd700;
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1rem;
+}
+
+header p {
+  font-size: 1rem;
+  position: relative;
+}
+
+button {
+  all: unset;
+  font-family: Arial;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  background-color: white;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 3rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+.counter {
+  font-size: 8rem;
+}
