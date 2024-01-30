@@ -6,15 +6,17 @@ let green = document.body.querySelector(".green");
 let blue = document.body.querySelector(".blue");
 
 function render() {
+  red.value;
+  green.value;
+  blue.value;
   colorResult.textContent =
-    "rgb(" + red.value + ", " + green.value + ", " + blue.value + ")";
+    "rgb(" + red.value + "," + green.value + "," + blue.value + ")";
+  render();
 }
-render();
-
 //Event Listener
-header.addEventListener("change", () => {
-  let colorName = colorResult.textContent;
-  main.style.backgroundColor = colorName;
+header.addEventListener("click", () => {
+  main.style.backgroundColor =
+    "rgb(" + red.value + "," + green.value + "," + blue.value + ")";
   render();
 });
 
