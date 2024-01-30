@@ -1,13 +1,15 @@
 html,
 body {
-  height: 100%;
   margin: 0;
   font-family: monospace;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 header {
   background-color: #ffd700;
   padding: 1.5rem;
+  position: relative;
 }
 
 h1 {
@@ -17,7 +19,6 @@ h1 {
 
 header p {
   font-size: 1rem;
-  position: relative;
 }
 
 button {
@@ -33,11 +34,18 @@ button {
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 75%;
+  height: 100%;
+  position: relative;
 }
 .counter {
   font-size: 8rem;
+  position: absolute;
+  left: 45%;
+  top: 30%;
+}
+
+.background {
+  background-color: white;
+  height: 100%;
+  width: 0;
 }
