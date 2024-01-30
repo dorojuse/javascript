@@ -13,7 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background-color: pink;
+  background-color: rgb(255, 192, 203);
 }
 .flex {
   display: flex;
