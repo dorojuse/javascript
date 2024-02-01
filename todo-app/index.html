@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Todo App</h1>
+    </header>
+    <main>
+        <article class="add">
+            <input id="input" type="text" value="Get sh*t done!">
+            <button class="addbtn">Add</button>
+        </article>
+        <article class="filter">
+            <h2>Filter & Options</h2>
+            <ul>
+                <li><label>
+                        <input type="radio">All
+                    </label></li>
+                <li><label>
+                        <input type="radio">Open
+                    </label></li>
+                <li><label>
+                        <input type="radio">Done
+                    </label></li>
+            </ul>
+            <button class="removebtn">Remove Done Todos</button>
+        </article>
+        <article class="todos">
+            <h2>Your Todos</h2>
+            <ul>
+                <li><label><input type="checkbox">Learn HTML</label></li>
+                <li><label><input type="checkbox">Learn CSS</label></li>
+                <li><label><input type="checkbox">Learn JavaScript</label></li>
+            </ul>
+        </article>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
