@@ -14,8 +14,12 @@
     </header>
     <main>
         <article class="add">
-            <input id="input" type="text" value="Get sh*t done!">
-            <button class="addbtn">Add</button>
+            <form id="add-form">
+
+                <input value="" id="description" type="text" name="description" minlength="5" required>
+                <button type="submit" class="addbtn">Add</button>
+
+            </form>
         </article>
         <article class="filter">
             <h2>Filter & Options</h2>
@@ -34,7 +38,7 @@
         </article>
         <article class="todos">
             <h2>Your Todos</h2>
-            <ul>
+            <ul id="list">
                 <li><label><input type="checkbox">Learn HTML</label></li>
                 <li><label><input type="checkbox">Learn CSS</label></li>
                 <li><label><input type="checkbox">Learn JavaScript</label></li>
