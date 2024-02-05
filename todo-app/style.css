@@ -65,14 +65,14 @@ h2 {
   margin-left: 1rem;
 }
 
-input[type="radio"] {
+/*input[type="radio"] {
   appearance: none;
   -webkit-appearance: none;
   border-radius: 50%;
   background: #ff572233;
   border: 8px solid #fff;
   box-shadow: 0 0 0 2px #073b4c;
-}
+}*/
 
 .filter ul li {
   line-height: 1.5rem;
