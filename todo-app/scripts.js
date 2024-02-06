@@ -20,7 +20,7 @@ let state = {
       done: false,
     },
   ],
-  filter: "all", // open, done
+  filter: "all", // open, done,
 };
 
 const savedState = localStorage.getItem("todo-state");
@@ -33,7 +33,17 @@ function renderTodos() {
 
   list.innerHTML = "";
 
-  state.todos.forEach((todo) => {
+  const filter = state.todos.filter((todo) => {
+    if (state.filter === "open") {
+      return !todo.done;
+    } else if (state.filter === "done") {
+      return todo.done;
+    } else {
+      return todo;
+    }
+  });
+
+  filter.forEach((todo) => {
     const todoLi = document.createElement("li");
 
     const checkbox = document.createElement("input");
@@ -67,19 +77,9 @@ addForm.addEventListener("submit", (event) => {
     done: false,
   });
 
-  //removeDuplicates?
-
   renderTodos();
   descriptionInput.value = "";
 });
-
-/*removebtn.addEventListener("click", () => {
-  state.todos.forEach((todo) => {
-    if (todo.done) {
-      todo.innerHTML = "";
-    }
-  });
-});*/
 
 allbtn.addEventListener("click", () => {
   state.filter = "all";
@@ -93,6 +93,15 @@ openbtn.addEventListener("click", () => {
 
 donebtn.addEventListener("click", () => {
   state.filter = "done";
+  renderTodos();
+});
+
+removebtn.addEventListener("click", () => {
+  state.todos.forEach((todo) => {
+    if (todo.done) {
+      return "";
+    }
+  });
   renderTodos();
 });
 
