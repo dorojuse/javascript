@@ -71,11 +71,19 @@ addForm.addEventListener("submit", (event) => {
   const newDescription = inputText.trim();
   const generatedId = Date.now().toString();
 
-  state.todos.push({
-    id: generatedId,
-    description: newDescription,
-    done: false,
-  });
+  if (
+    state.todos.some(
+      (todo) => todo.description.toLowerCase() === newDescription.toLowerCase()
+    )
+  ) {
+    return;
+  } else {
+    state.todos.push({
+      id: generatedId,
+      description: newDescription,
+      done: false,
+    });
+  }
 
   renderTodos();
   descriptionInput.value = "";
@@ -97,11 +105,7 @@ donebtn.addEventListener("click", () => {
 });
 
 removebtn.addEventListener("click", () => {
-  state.todos.forEach((todo) => {
-    if (todo.done) {
-      return "";
-    }
-  });
+  state.todos = state.todos.filter((todo) => !todo.done);
   renderTodos();
 });
 
