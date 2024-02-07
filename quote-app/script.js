@@ -3,7 +3,10 @@ const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 const main = document.querySelector("main");
 
-let state = { quote: "Test", author: "Myself" }; // {}
+let state = {
+  quote: "Are you a good developer? Nobody can really tell you!",
+  author: "Dorothea Seitz",
+}; // {}
 
 function renderQuotes() {
   quote.textContent = state.quote;
