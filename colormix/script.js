@@ -6,9 +6,9 @@ let green = document.body.querySelector(".green");
 let blue = document.body.querySelector(".blue");
 
 let state = {
-  redValue: 0,
-  greenValue: 0,
-  blueValue: 0,
+  redValue: 255,
+  greenValue: 105,
+  blueValue: 180,
 };
 
 const savedState = localStorage.getItem("color-mixer-state");
@@ -47,4 +47,18 @@ header.addEventListener("input", () => {
   render();
 });
 
+document.querySelector("button").addEventListener("click", function (event) {
+  fetch("https://dummy-apis.netlify.app/api/color")
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      state.redValue = data.rgb.r;
+      state.greenValue = data.rgb.g;
+      state.blueValue = data.rgb.b;
+    });
+  render();
+});
 render();
