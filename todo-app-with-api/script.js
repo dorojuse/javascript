@@ -39,16 +39,13 @@ function renderTodos() {
     checkbox.type = "checkbox";
     checkbox.checked = todo.done;
 
-    checkbox.addEventListener("change", (event) => {
-      const checkboxChecked = event.target.checked;
-      let id = todo.id;
-
-      fetch(`http://localhost:4730/todos/${id}`, {
+    checkbox.addEventListener("change", () => {
+      fetch(`http://localhost:4730/todos/${todo.id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ done: checkboxChecked }),
+        body: JSON.stringify({ done: !todo.done }),
       })
         .then((response) => {
           if (!response.ok) {
@@ -56,7 +53,7 @@ function renderTodos() {
           }
           return response.json();
         })
-        .then((changeTodoItem) => {
+        .then(() => {
           refresh();
         });
     });
@@ -126,8 +123,13 @@ donebtn.addEventListener("click", () => {
 });
 
 removebtn.addEventListener("click", () => {
-  state.todos = state.todos.filter((todo) => !todo.done);
-  renderTodos();
+  state.todos.forEach((todo) => {
+    if (todo.done) {
+      fetch("http://localhost:4730/todos/${todo.id}", {
+        method: "DELETE",
+      }).then((res) => refresh());
+    }
+  });
 });
 
 renderTodos();
