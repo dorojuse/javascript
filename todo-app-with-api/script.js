@@ -125,7 +125,7 @@ donebtn.addEventListener("click", () => {
 removebtn.addEventListener("click", () => {
   state.todos.forEach((todo) => {
     if (todo.done) {
-      fetch("http://localhost:4730/todos/${todo.id}", {
+      fetch(`http://localhost:4730/todos/${todo.id}`, {
         method: "DELETE",
       }).then((res) => refresh());
     }
