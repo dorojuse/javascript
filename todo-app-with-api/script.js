@@ -39,10 +39,26 @@ function renderTodos() {
     checkbox.type = "checkbox";
     checkbox.checked = todo.done;
 
-    checkbox.addEventListener("change", () => {
-      todo.done = !todo.done;
+    checkbox.addEventListener("change", (event) => {
+      const checkboxChecked = event.target.checked;
+      let id = todo.id;
 
-      renderTodos();
+      fetch(`http://localhost:4730/todos/${id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ done: checkboxChecked }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Fetch didn't work!");
+          }
+          return response.json();
+        })
+        .then((changeTodoItem) => {
+          refresh();
+        });
     });
 
     const todoText = document.createTextNode(todo.description);
@@ -52,7 +68,7 @@ function renderTodos() {
   });
 }
 
-function loadTodos() {
+function refresh() {
   fetch("http://localhost:4730/todos")
     .then((res) => res.json())
     .then((todosFromApi) => {
@@ -61,7 +77,7 @@ function loadTodos() {
     });
 }
 
-loadTodos();
+refresh();
 
 addForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -87,9 +103,7 @@ addForm.addEventListener("submit", (event) => {
       body: JSON.stringify(newTodo),
     })
       .then((res) => res.json())
-      .then((newTodoFromApi) => {
-        state.todos.push(newTodoFromApi);
-      });
+      .then(() => refresh());
   }
 
   renderTodos();
